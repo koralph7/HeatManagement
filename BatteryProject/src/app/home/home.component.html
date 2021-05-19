@@ -1,0 +1,108 @@
+<!-- <div class="container" style="width: 2000px;"> -->
+    <!-- <ng-template [ngIf]="token.isAuthenticated()">
+        <a class="nav-link" (click) ="logOut()">Logout</a>
+      </ng-template> -->
+      
+      <button class = "btn b tn-default"(click) ="logout()">Logout</button>
+    <div *ngIf="info.token; else loggedOut">
+    
+      <div class="container">
+   <div id="wrap" >    
+    <div class="row">
+      <h6></h6> </div>
+   
+  <div class="row">
+    <div class="title"  style="position: relative; left: 200px;"><span style=" position:relative; left: 180px;">Baterry</span> <br>Management System                     </div>
+    <!-- <img class="img-responsive" src="assets/img/eko.jpg" alt="Chania" style="width: 170px; height: 200px; position: relative;opacity: 0.5; left: 350px;">  -->
+  </div>
+  
+
+  <div *ngIf="userMode">
+
+    
+
+  
+
+  <div class="row">
+    <div class="col-lg-12" >
+      <p>
+          
+        <a routerLink="/battery" class="btn btn-sq-lg btn-primary"  > 
+          
+            <div id="ss">
+              Baterie </div>
+            <i class="fas fa-car-battery" style="font-size: 70px; position: relative;"></i>
+           
+        </a>
+       
+        &nbsp;&nbsp;&nbsp;
+        <a routerLink="/infoHub" class="btn btn-sq-lg btn-primary">
+          <div id="ss">
+          InfoHub </div><i class="fas fa-info-circle"style="font-size: 70px;position: relative; "></i>
+        </a>
+      </p>
+    </div>
+</div>
+  </div>
+
+  <div *ngIf="adminMode">
+    <div id="wrap" style="position: relative; bottom: 220px;">
+    <a routerLink="/userManagement" class="btn btn-sq-lg btn-secondary " style="position: relative; right: 60px;">
+      <div id="ss">
+     Użytkownicy </div><i class="fas fa-mobile-alt"style="font-size: 70px;"></i>
+    </a>
+  
+
+  
+
+  <div class="row">
+    <div class="col-lg-12" style="right: 60px;">
+      <p>
+          
+        <a routerLink="/beacon" class="btn btn-sq-lg btn-primary" > <div id="ss" >
+            Beacony </div>
+            <i class="fab fa-bluetooth-b" style="font-size: 70px; position: relative;"></i>
+           
+        </a>
+        <a routerLink="/device" class="btn btn-sq-lg btn-success">
+          <div id="ss">
+          Telefony </div><i class="fas fa-mobile-alt"style="font-size: 70px;"></i>
+        </a>
+        <a routerLink="/beaconVisit" class="btn btn-sq-lg btn-info " >
+          <div id="ss">
+          Raporty</div><i class="far fa-eye"style="font-size: 70px;"></i>
+        </a>
+        <a routerLink="/visits" class="btn btn-sq-lg btn-warning">
+          <div id="ss">
+            Wizyty</div><i class="far fa-calendar-alt"style="font-size: 70px;"></i>
+          </a>
+          <!-- <div id="ss"style="color:black">
+          Wizyty </div><i class="far fa-calendar-alt"style="font-size: 70px;position: relative; bottom:40px;"></i>
+        </a> -->
+        <a routerLink="/walkSchedule" class="btn btn-sq-lg btn-danger">
+          <div id="ss">
+          Harmonogram </div><i class="fas fa-shoe-prints"style="font-size: 70px;position: relative; "></i>
+        </a>
+      </p>
+    </div>
+</div>
+</div>
+  </div>
+</div>
+    </div>
+    <div class="div" style="color:white; position: relative; top: 400px;">03.09.20</div>
+  <!-- </div> -->
+ <ng-template #loggedOut> 
+      
+    <div class="hhi" style="position: relative; left: 150px;  top: 100px;font-size: 80px; color: #99ff99" >Wylogowałeś się poprawnie
+    </div>
+
+    <div class="hiih" style="position: relative; top:200px;left:450px">
+
+    <a class="btn btn-primary" href="auth/login">Zaloguj</a>
+    <!-- or
+    <a class="btn btn-primary" href="signup">SignUp</a> -->
+  </div>
+ 
+  </ng-template> 
+

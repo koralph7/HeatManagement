@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* .bg{
+    width: 1300px;
+    height: 1000px;
+    opacity: 0.2;
+    background-image: url("assets/img/eko.jpg");
+    /* background: url('assets/img/eko.jpg') no-repeat center; */
+    /* background-size: 100% 100%;
+    background-position: top center;
+  } */ 

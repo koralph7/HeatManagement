@@ -1,0 +1,50 @@
+.btn-sq-lg {
+  width: 410px !important;
+  height: 220px !important;
+  /* margin: 15px; */
+  position: relative;
+  top:100px;
+  border-radius: 0%;
+  left: 100px;
+
+ 
+
+}
+
+
+
+.img{
+  width: 100px;
+  height: 200px;
+}
+
+.btn-default:hover{
+  background-color: #669999;
+}
+
+#ss{
+  position: relative; top: 120px; 
+  font-size: 30px; font-weight: 300; color: white; font-family: sans-serif;
+}
+
+#i{
+
+font-size: 50px;
+
+}
+
+.a{
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.title{
+position: relative;
+left:180px;
+  font-size: 70px;
+
+
+}

@@ -1,0 +1,63 @@
+.mat-tooltip.tooltip{
+  /* size: 150px  !important; */
+  font-size: 50px;
+}
+
+.myButton {
+	background-color:#659cc0;
+	border-radius:22px;
+	border:4px solid #659cc0;
+	display:inline-block;
+	cursor:pointer;
+	color:#0f0c0f;
+	font-family:Georgia;
+	font-size:21px;
+	padding:14px 42px;
+  text-decoration:none;
+  position: relative;
+  top: 100px;  
+}
+.myButton:hover {
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
+
+
+.circle{
+height: 340px;
+  width: 440px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  /* border-radius: 50%; */
+  /* border: brown;
+  border-color: brown;
+  border-style: solid;
+  border-width: thin; */
+  background: white;
+  float: left;
+  margin: 50px;
+  position: relative;
+  top: 200px;
+  -webkit-box-shadow: 3px 4px 20px 11px #8E8E8E; 
+box-shadow: 3px 4px 20px 11px #8E8E8E;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+
+}
+
+
+.textWrap {
+
+    font-size: 22px;
+    position: relative;
+    top: 50px;
+    left:90px;
+
+}

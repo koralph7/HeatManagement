@@ -1,0 +1,155 @@
+<!-- <p>battery works!</p> -->
+
+
+<div class="container">
+    <div class="row">
+<h1 style="position: relative; left: 450px; top: 100px; font-size: 50px;">InfoHub</h1></div>
+<div class="row">
+      
+            <div *ngFor = "let infoHub of infoHubs">
+                <div class="circle">
+             <div class="textWrap" >
+                    <div class="row">
+                        Temperatura Pomieszczenia:&nbsp; <span style="font-weight: bold;">{{infoHub.roomTemp}}</span>
+                    </div>
+                    <div class="row">
+                        Nazwa Baterii:&nbsp; <span style="font-weight: bold;">{{infoHub.bateryName}}</span>
+                    </div>
+                    <div class="row">
+                        Temperatura Baterii:&nbsp; <span style="font-weight: bold;">{{infoHub.bateryTemp}}</span>
+                    </div>
+                    <!-- <div class="row">
+                        Usb: {{infoHub.usb}}
+                    </div> -->
+                </div>     
+                 
+                    <button class="myButton" (click) = "editGuard(guardEl.id)">Edytuj</button>
+       &nbsp; <button class="myButton"(click) = "deleteGuard(guardEl.id)">Usuń</button>
+     
+          <!-- E-maile:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; " matTooltip={{newItems}}> &nbsp; ...</span></div> -->
+          </div>
+    
+       
+       
+        <!-- <a routerLink="/device/{{guardEl.id}}"><button class="btn btn-warning"style="position: relative; top:70px; left: 0px; height: 50px">E-maile</button></a> -->
+        <!-- <a routerLink="/workName/{{guardEl.name}}"><button class="btn btn-primary"style="position: relative; top:90px; ">Plan</button></a> -->
+        <!-- <button class="btn btn-primary"style="position: relative; top:90px; left: 20px;">Execution</button> -->
+      </div></div></div>
+
+        
+  
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container">
+    
+
+    <div *ngIf = "adminMode">
+      <h1 style="font-size: 70px; position: relative; top: 60px;left:70px;">Security Team</h1>
+      <a routerLink="/home"><button class="btn btn-primary"style="position: relative; top:0px; left:770px; height:50px">Menu</button></a>
+      <button class="btn btn-warning" (click) ="addingfrom()" style="height:60px; position: relative; left:800px; top:0px; text-align: center;">Dodaj telefon</button>
+  <div class="row">
+      <div class="row" *ngIf="showform">
+          <form #f="ngForm" style="width: 400px;  position: relative; top: 50px; left: 100px;">
+            <div class="form-group">
+              
+              <label for="name">Nazwa</label>
+              <input type="text" [(ngModel)] = "guard.name" class="form-control" name = "name" >
+              
+              <label for="deviceId">Id Telefonu</label>
+              <input type="text" [(ngModel)] = "guard.deviceId" class="form-control" name = "deviceId" >
+
+             <label for="deviceId">User Id</label>
+              <select class="form-control" style="width: 200px;" id="exampleFormControlSelect1" [(ngModel)] = "useruserId" name = "useruserId" >
+                   <option>---</option>     
+             <option *ngFor = "let useruserId of userList"> {{useruserId.id}}</option> 
+             
+             
+            </select>
+              
+            </div>
+            <button *ngIf="!editMode"class="btn btn-success" (click) ="submitAdmin(useruserId)" > 
+            Zatwierdź  
+          </button>
+          <button *ngIf="editMode"class="btn btn-success"  style = "height:50px;"(click) ="submitChangesAdmin(guard.id, useruserId)"> 
+            Zatwierdź zmiany  
+          </button>
+          </form>
+        </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <div *ngIf = "userMode">
+      <h1 style="font-size: 70px; position: relative; top: 60px;left:70px;">Security Team</h1>
+      <a routerLink="/home"><button class="btn btn-primary"style="position: relative; top:0px; left:770px; height:60px; font-size: 25px; ">Menu</button></a>
+      <button class="btn btn-warning" (click) ="addingfrom()" style="height:60px; position: relative; left:800px; top:0px; font-size: 15px; text-align: center;">Dodaj telefon</button>
+
+</div>
+
+  <div *ngIf = "userMode">
+    <div id="mycon">
+        <div *ngFor = "let infoHub of infoHubs">
+    <div class="circle">
+      
+        <div class="row"  >
+      
+        
+   Temperatura pomieszczeeenia:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; left: 50px;" > &nbsp; {{infoHub.roomBatery}}</span></div>
+
+  <div class="row"style="position: relative; right: 100px;">
+    Nazwa baterii:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; " > &nbsp; {{infoHub.bateryName}}</span></div>
+  
+    <div class="row"style="position: relative; right: 40px;">
+        Temperatura baterii:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; " > &nbsp; {{infoHub.bateryTemp}}</span></div>
+        
+        <div class="row"style="position: relative; right: 100px;">
+            usb:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; left: 100px;" > &nbsp; {{infoHub.usb}}</span></div>
+            
+
+  
+    <button class="btn btn-primary" style="position: relative; top:70px;" (click) = "editGuard(guardEl.id)">Edytuj</button>
+    <button class="btn btn-danger"style="position: relative; top:70px; left: 0px;"(click) = "deleteGuard(guardEl.id)">Usuń</button>
+    <br> 
+    <a routerLink="/device/{{guardEl.id}}"><button class="btn btn-warning"style="position: relative; top:70px; left: 0px; height: 50px">E-maile</button></a>
+   </div></div></div>
+  </div>
+  
+  <div *ngIf = "adminMode">
+    <div id="mycon">
+        <div *ngFor = "let guardEl of guardsAdmin"
+        
+        >
+    <div class="circle">
+      <div class="textWrap" style="position: relative; right: 40px;">
+      <div class="row" style="position: relative; right: 40px;" >
+        
+ Nazwa: <span style="font-weight:bold">          &nbsp;{{guardEl.name}}</span></div><div class="row"style="position: relative; right: 40px;">
+  Id Telefonu:  <span style="font-weight:bold; font-size: 15px; position: relative;  top:5px; " > &nbsp; {{guardEl.deviceId}}</span></div>
+     <div class="row" style="position: relative; right: 40px;" >
+        
+       Id Usera: <span style="font-weight:bold">          &nbsp;{{guardEl.userId.id}}</span></div>
+    </div>  
+    
+    <div id="wrap" style="position: relative; left:50px;">
+    <button class="btn btn-primary" style="position: relative; top:70px; right: 50px;" (click) = "editGuard(guardEl.id)">Edytuj</button>
+    <button class="btn btn-danger"style="position: relative; top:70px;  right:50px;"(click) = "deleteGuard(guardEl.id)">Usuń</button>
+   </div>
+   <a routerLink="/device/{{guardEl.id}}"><button class="btn btn-warning"style="position: relative; top:70px; left: 0px; height: 40px">E-maile</button></a>
+  
+    </div></div></div>
+  </div>
+
+  
+
+</div> -->

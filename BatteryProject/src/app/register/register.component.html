@@ -1,0 +1,62 @@
+<div *ngIf="isSignedUp; else signupForm">
+    Rejestracja przebiegła pomyślnie.
+    <a routerLink="/home"><button class="btn btn-primary">Menu</button></a>
+  </div>
+ 
+  
+  
+  <ng-template #signupForm >
+
+    <h3 style=" width: 500px; position: relative; left: 450px; font-size: 40px; top: 50px;">Zarejestruj nowego pracownika</h3>
+  
+  
+    <a routerLink="/home"><button class="btn btn-primary"style="position: relative; top:50px; left: 700px;  height:50px">Menu</button></a>
+    
+  
+  
+  <div class="row col-sm-6" style="max-width:350px;  position: relative; left: 450px; top: 100px; float: left;">
+      
+      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="name">Imie</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" required />
+          <div *ngIf="f.submitted && name.invalid">
+            <div *ngIf="name.errors.required">Imie jest wymagane</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+            required />
+          <div *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Username jest wymagany</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+          <div *ngIf="f.submitted && email.invalid">
+            <div *ngIf="email.errors.required">Email jest wymagany</div>
+            <div *ngIf="email.errors.email">Email nieprawidłowy</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Hasło</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+            required minlength="6" />
+          <div *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors.required">Hasło jest wymagane</div>
+            <div *ngIf="password.errors.minlength">Hasło musi mieć przynajmniej 6 znaków</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Rejestruj</button>
+          <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+            Rejestracja nieudana!<br/>{{errorMessage}}
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+
+ 

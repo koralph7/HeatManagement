@@ -1,0 +1,69 @@
+
+ <div class= "wr"><a routerLink="/home"><button class="btn btn-primary"style="position: relative; top:40px; left:890px; ">Menu</button></a>
+<a class="btn btn-warning" routerLink="/signup" style="font-weight: 900; width: 70px; position: relative; top:40px; left:740px;">Dodaj</a> 
+ </div>
+
+<div class="container">
+
+
+    <h1>Użytkownicy</h1>
+<br>
+<br>
+
+<div class="row " *ngIf="showform">
+  <form #f="ngForm" style="width: 400px; position: relative; left: 100px; margin-bottom: 30px;">
+    <div class="form-group">
+      <label for="name">Imię</label>
+      <input type="text" [(ngModel)] = "user.name" class="form-control" name = "name" >
+      <label for="name">UserName</label>
+      <input type="text" [(ngModel)] = "user.username" class="form-control" name = "username" >
+      
+      <label for="value">Email</label>
+      <input type="text" [(ngModel)] = "user.email" class="form-control" name = "email"  >
+      <label for="value">Password</label>
+      <input type="password" [(ngModel)] = "user.password" class="form-control" name = "password"  >
+    </div>
+    <button 
+            type="button"
+             style="color: white; background-color:#000d33" (click) ="submitChanges(user.id)"> 
+            Zatwierdź zmiany  
+          </button>
+          </form>
+</div>
+
+<!-- <div id="cc" style="border: black; position: relative; left: 150px;" > -->
+    <table class="table table-light " style="width: 900px;"  >
+        <!--Table head-->
+           <thead class="thead-light" style="width: 200px;">
+            <tr>
+              <th>UserId</th>
+              <th>Imię</th>
+              <th>Username</th>
+              <th >Email</th>
+              <th ></th>
+              
+             
+  
+  
+              
+            </tr>
+          </thead>
+       
+          <tbody>
+            <tr *ngFor = "let userEl of users" >
+              
+              <td>{{userEl.id}}</td>
+              <td>{{userEl.name}}</td>
+              <td>{{userEl.username}}</td>
+              <td>{{userEl.email}}</td>
+              
+             <button class="btn btn-dark"  (click) = "getDateils(userEl.id)" style="position: relative; right:0px;" >Szczegóły</button > &nbsp;
+                <button class="btn btn-dark"  (click) = "updateUser(userEl.id)" style="position: relative; right:0px;" >Edytuj</button > &nbsp;
+                <!-- <button class="btn btn-dark" (click) = "deleteUser(userEl.id)"style="position: relative; right:170px;">Edytuj</button> -->
+                <button class="btn btn-dark" (click) = "deleteUser(userEl.id)"style="position: relative; right:0px;">Usuń</button></tr>
+          
+          </tbody>
+          
+        </table> 
+</div>
+<!-- </div> -->

@@ -1,0 +1,75 @@
+<a routerLink="/home"><button class="btn btn-primary"style="position: relative; top:50px; left:870px; height:50px">Menu</button></a>
+<a routerLink="/userManagement"><button class="btn btn-warning"style="position: relative; top:50px; left:880px; height:50px">Powrót</button></a>
+
+
+<div class="container">
+  <div *ngIf="user">
+    <h1>
+      
+      nazwa użytkownika: {{user.username}}
+    
+    </h1>
+
+
+    <br>
+    <br>
+    <br>
+
+
+    </div>
+    <div class="row">
+      <div class="col">
+        <h3>Beacony</h3>
+    <table class="table table-success " >
+      
+         <thead class="thead-dark" style="width: 600px;">
+          <tr>
+            <th>#</th>
+            <th>UUID</th>
+            <th>Nazwa</th>
+            
+          </tr>
+        </thead>
+     
+        <tbody>
+          <tr *ngFor = "let bec of beacons; let i = index" >
+            
+    
+            <td>{{i+1}}</td>
+            <td>{{bec.uuid}}</td>
+            <td>{{bec.name}}</td>
+         
+        
+        
+        </tbody>
+        
+      </table> 
+  </div>
+  <div class="col">
+    <h3>Telefony</h3>
+    <table class="table table-primary " >
+      
+      <thead class="thead-dark" style="width: 400px;">
+       <tr>
+         <th>#</th>
+         <th>ID</th>
+         <th>Nazwa</th>
+         
+       </tr>
+     </thead>
+  
+     <tbody>
+       <tr *ngFor = "let dev of devices; let i = index" >
+         
+ 
+         <td>{{i+1}}</td>
+         <td>{{dev.deviceId}}</td>
+         <td>{{dev.name}}</td>
+      
+     
+     
+     </tbody>
+     
+   </table> 
+  </div>
+</div>
