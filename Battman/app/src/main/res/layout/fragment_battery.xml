@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id = "@+id/batteries_list"
+    tools:context=".BatteryFragment"
+    tools:listitem="@layout/fragment_battery_item"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+</androidx.recyclerview.widget.RecyclerView>
+
